@@ -10,5 +10,6 @@ public class Car {
     double traveleDistance;
     int doorCount;
     boolean running;
-
+    // has-a relationship
+    Engine engine;
 }
