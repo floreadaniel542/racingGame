@@ -28,6 +28,8 @@ public class App
         System.out.println(car.traveleDistance) ;
         System.out.println(car.running) ;
 
+        car.accelerate(60, 1);
+
         Car car2 = new Car() ;
         car2.name = "Golf";
         car.name = "Skoda";
@@ -39,11 +41,11 @@ public class App
         car.maxSpeed = 220;
         car.fuelType = "Gasoline";
 
-        Engine engine = new Engine();
-        engine.manufactures = "Renault";
-        engine.capacity = 1900;
+        Engine engine2 = new Engine();
+        engine2.manufactures = "Renault";
+        engine2.capacity = 1900;
 
-        car.engine = engine;
+        car.engine = engine2;
 
         //concatenation
         System.out.println("Car2 name: " + car2.name);
