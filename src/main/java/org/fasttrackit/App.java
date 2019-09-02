@@ -1,5 +1,7 @@
 package org.fasttrackit;
 
+import java.util.Scanner;
+
 /**
  * Hello world!
  *
@@ -43,17 +45,25 @@ public class App
         car.maxSpeed = 220;
         car.fuelType = "Gasoline";
 
-        Engine engine2 = new Engine();
-        engine2.manufactures = "Renault";
-        engine2.capacity = 1900;
+        Engine engine3 = new Engine();
+        engine3.manufactures = "Renault";
+        engine3.capacity = 1900;
 
-        car.engine = engine2;
+        car.engine = engine3;
 
         //concatenation
         System.out.println("Car2 name: " + car2.name);
         System.out.println("Car1 name: " + car.name);
 
         car = car2;
+
+        System.out.println("Modulo examples");
+        System.out.println(4 % 2);
+        System.out.println(4 % 3);
+
+        Scanner scanner = new Scanner(System.in);
+        String text = scanner.nextLine();
+        System.out.println("Input from user: " + text);
 
 
 
