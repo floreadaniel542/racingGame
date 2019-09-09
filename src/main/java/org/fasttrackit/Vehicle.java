@@ -2,14 +2,19 @@ package org.fasttrackit;
 
 public class Vehicle {
 
-    String name;
-    double mileage;
-    double maxSpeed;
-    String fuelType;
-    double fuelLevel;
-    double traveleDistance;
+    static int totalCount;
 
+   private String name;
+   private double mileage;
+   private double maxSpeed;
+   private String fuelType;
+   private double fuelLevel;
+   private double traveleDistance;
     boolean running;
+
+    public static int getTotalCount() {
+        return totalCount;
+    }
 
     public double accelerate(double speed, double durationInHours){
         System.out.println(name + " is accelerating with " + speed + "km/h for " + durationInHours + " h.");
@@ -38,5 +43,59 @@ public class Vehicle {
         return distance;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getMileage() {
+        return mileage;
+    }
+
+    public void setMileage(double mileage) {
+        this.mileage = mileage;
+    }
+
+    public double getMaxSpeed() {
+        return maxSpeed;
+    }
+
+    public void setMaxSpeed(double maxSpeed) {
+        this.maxSpeed = maxSpeed;
+    }
+
+    public String getFuelType() {
+        return fuelType;
+    }
+
+    public void setFuelType(String fuelType) {
+        this.fuelType = fuelType;
+    }
+
+    public double getFuelLevel() {
+        return fuelLevel;
+    }
+
+    public void setFuelLevel(double fuelLevel) {
+        this.fuelLevel = fuelLevel;
+    }
+
+    public double getTraveleDistance() {
+        return traveleDistance;
+    }
+
+    public void setTraveleDistance(double traveleDistance) {
+        this.traveleDistance = traveleDistance;
+    }
+
+    public boolean isRunning() {
+        return running;
+    }
+
+    public void setRunning(boolean running) {
+        this.running = running;
+    }
 }
