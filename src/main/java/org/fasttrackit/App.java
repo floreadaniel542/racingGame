@@ -8,7 +8,12 @@ import java.util.Scanner;
  */
 public class App 
 {
-    public static void main( String[] args ) {
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
+
+    public static void main(String[] args ) {
 
         // this is a one-line comment
 
@@ -23,6 +28,8 @@ public class App
         car.doorCount = 5 ;
         car.setMaxSpeed(180) ;
         car.setFuelType("Gasoline") ;
+
+        System.out.println("Car onject: " + car.toString());
 
         System.out.println(car.getName());
         System.out.println(car.getTraveleDistance());
@@ -80,7 +87,17 @@ public class App
 //        System.out.println("Total count in car2: " + car2.totalCount) ;
 //        System.out.println("Total count in Car class: " + Car.totalCount);
 
+        HybridCar hybridCar = new HybridCar();
+        hybridCar.setName("cheater");
+
+        hybridCar.accelerate( 60,  1);
+
+        System.out.println("Fuel level " + hybridCar.getFuelLevel());
+        System.out.println("Travel distance: " + hybridCar.getTraveleDistance());
+
+
     }
+
 
 }
 
