@@ -14,6 +14,8 @@ public class App
     }
 
     public static void main(String[] args ) {
+        Game game = new Game();
+        game.start();
 
         // this is a one-line comment
 
@@ -87,17 +89,17 @@ public class App
 //        System.out.println("Total count in car2: " + car2.totalCount) ;
 //        System.out.println("Total count in Car class: " + Car.totalCount);
 
-       Vehicle hybridCar = new HybridCar();
-        hybridCar.setName("cheater");
-
-        //method implementation from object's class from veritable's class
-        hybridCar.accelerate( 60,  1);
-
-        System.out.println("Fuel level " + hybridCar.getFuelLevel());
-        System.out.println("Travel distance: " + hybridCar.getTraveleDistance());
-
-        //variable type decides what methods can be invoked
-        ((HybridCar) hybridCar).fly();
+//       Vehicle hybridCar = new HybridCar();
+//        hybridCar.setName("cheater");
+//
+//        //method implementation from object's class from veritable's class
+//        hybridCar.accelerate( 60,  1);
+//
+//        System.out.println("Fuel level " + hybridCar.getFuelLevel());
+//        System.out.println("Travel distance: " + hybridCar.getTraveleDistance());
+//
+//        //variable type decides what methods can be invoked
+//        ((HybridCar) hybridCar).fly();
     }
 
 
