@@ -3,6 +3,7 @@ package org.fasttrackit;
 import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
@@ -19,10 +20,35 @@ public class Game {
         initializeTracks();
         displayTracks();
 
+        Track selectedTrack = getSelectedTrackFromUser();
+
         initializeCompetitors();
 
 
     }
+
+    private Track getSelectedTrackFromUser() {
+        System.out.println("Please select a track.");
+        Scanner scanner = new Scanner(System.in);
+
+        int userChoice;
+
+        try {
+            userChoice = scanner.nextInt();
+            return tracks[userChoice - 1];
+        } catch (InputMismatchException | ArrayIndexOutOfBoundsException e) {
+            System.out.println("You have entred an invalid number.");
+            // recursion - a method calling itself
+            return getSelectedTrackFromUser();
+        }
+    }
+
+
+
+
+
+
+
     private void initializeCompetitors() throws Exception {
         int competitorCount = getCompetitorCountFromUser();
 
