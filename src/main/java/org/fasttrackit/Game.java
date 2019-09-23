@@ -23,9 +23,26 @@ public class Game {
         Track selectedTrack = getSelectedTrackFromUser();
 
         initializeCompetitors();
-
-
+        //for-each or enhanced for loop
+        for (Vehicle vehicle : competitors) {
+            vehicle.accelerate(60, 1);
+        }
     }
+
+    private double getAcelerationSpeedFromUser() {
+        System.out.println("Please enter acceleration speed");
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            double speed = scanner.nextInt();
+        } catch (IndexOutOfBoundsException e) {
+            System.out.println("You have entred an invalid number.");
+            getAcelerationSpeedFromUser();
+        }
+    }
+
+
+
 
     private Track getSelectedTrackFromUser() {
         System.out.println("Please select a track.");
@@ -44,11 +61,6 @@ public class Game {
     }
 
 
-
-
-
-
-
     private void initializeCompetitors() throws Exception {
         int competitorCount = getCompetitorCountFromUser();
 
@@ -58,9 +70,9 @@ public class Game {
 
         for (int i = 0; i < competitorCount; i++) {
             Vehicle competitor = new Vehicle();
-            competitor.setName("Competitor " + i );
+            competitor.setName("Competitor " + i);
             competitor.setMaxSpeed(300);
-            competitor.setMileage(ThreadLocalRandom.current().nextDouble(6,12));
+            competitor.setMileage(ThreadLocalRandom.current().nextDouble(6, 12));
             competitor.setFuelLevel(80);
 
             System.out.println(competitor);
@@ -68,21 +80,20 @@ public class Game {
             competitors.add(competitor);
 
 
-
         }
     }
+
     private int getCompetitorCountFromUser() throws Exception {
         System.out.println("Please enter number of players.");
         Scanner scanner = new Scanner(System.in);
         try {
-             return scanner.nextInt();
-    } catch (IndexOutOfBoundsException e) {
+            return scanner.nextInt();
+        } catch (IndexOutOfBoundsException e) {
             throw new Exception("You have entred an invalid number.");
-        }finally {
-                System.out.println("Finally block is always executed");
-            }
+        } finally {
+            System.out.println("Finally block is always executed");
         }
-
+    }
 
 
     private void initializeTracks() {
