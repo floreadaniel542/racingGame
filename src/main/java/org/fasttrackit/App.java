@@ -13,7 +13,7 @@ public class App
         return super.clone();
     }
 
-    public static void main(String[] args ) {
+    public static void main(String[] args ) throws Exception {
         Game game = new Game();
         game.start();
 
