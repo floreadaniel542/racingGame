@@ -28,6 +28,8 @@ public class Game {
             initializeCompetitors();
             //for-each or enhanced for loop
             for (Vehicle vehicle : competitors) {
+                System.out.println("It's " + vehicle.getName() + "'s turn,");
+                double speed = getAcelerationSpeedFromUser();
                 vehicle.accelerate(60, 1);
                 if (selectedTrack.getLength() <= vehicle.getTraveleDistance()) {
                     winnerNotKnown = false;
