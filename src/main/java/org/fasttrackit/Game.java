@@ -1,6 +1,5 @@
 package org.fasttrackit;
 
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -22,10 +21,23 @@ public class Game {
 
         Track selectedTrack = getSelectedTrackFromUser();
 
-        initializeCompetitors();
-        //for-each or enhanced for loop
-        for (Vehicle vehicle : competitors) {
-            vehicle.accelerate(60, 1);
+        boolean winnerNotKnown = true;
+        int competitorsWithoutFuel = 0;
+        while (winnerNotKnown && competitorsWithoutFuel < competitors.size()) {
+
+            initializeCompetitors();
+            //for-each or enhanced for loop
+            for (Vehicle vehicle : competitors) {
+                vehicle.accelerate(60, 1);
+                if (selectedTrack.getLength() <= vehicle.getTraveleDistance()) {
+                    winnerNotKnown = false;
+                    System.out.println("The winner is: " + vehicle.getName());
+                    break;
+                }
+                if (vehicle.getFuelLevel() <= 0) {
+                    competitorsWithoutFuel++;
+                }
+            }
         }
     }
 
@@ -39,9 +51,8 @@ public class Game {
             System.out.println("You have entred an invalid number.");
             getAcelerationSpeedFromUser();
         }
+        return getAcelerationSpeedFromUser();
     }
-
-
 
 
     private Track getSelectedTrackFromUser() {
