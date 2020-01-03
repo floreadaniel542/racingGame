@@ -31,6 +31,7 @@ public class Game {
                 System.out.println("It's " + vehicle.getName() + "'s turn,");
                 double speed = getAcelerationSpeedFromUser();
                 vehicle.accelerate(60, 1);
+
                 if (selectedTrack.getLength() <= vehicle.getTraveleDistance()) {
                     winnerNotKnown = false;
                     System.out.println("The winner is: " + vehicle.getName());
